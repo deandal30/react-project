@@ -29,10 +29,11 @@ class BenefitView extends Component {
                             <div className="mr-2">
                             <img 
                               src={process.env.PUBLIC_URL + '/images/tooth.png'}
-                              style={{height: "80px"}}
+                              style={{height: "82px", width: "82px"}}
                             />
-                              <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Riders</label>
                             </div>  
+                            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Riders</label>
+                            
                           </div>
                         </div>
                         <div className="six wide computer eight wide tablet eight wide mobile column">
@@ -42,9 +43,49 @@ class BenefitView extends Component {
                             </div>
                         </div>
                         <div className="eight wide computer eight wide tablet eight wide mobile column">
+                        <div className="two wide computer sixteen wide mobile column" style={{textAlign: 'right', fontSize: '2rem', paddingTop: '1rem'}}><div tabindex="0" className="ui dropdown"><i className="ellipsis vertical icon"></i> <div tabindex="-1" className="menu"><div className="item"><i className="edit outline icon"></i>
+                            Edit
+                          </div> <div className="item"><i className="clone outline icon"></i>
+                            Versions
+                          </div> <div className="item"><i className="icon-product icon"></i>
+                            View plans
+                          </div> <div className="divider"></div> <div className="item"><i className="trash alternate icon"></i>
+                            Discontinue
+                          </div> <div className="item"><i className="trash alternate icon"></i>
+                            Delete
+                          </div></div></div></div>
                         </div>
                         <div className="eight wide computer eight wide tablet eight wide mobile column">
+                          <div className="ui grid"><div className="nine wide column"><div style={{height: '9px'}}></div> <div className="ui form"><div className="three fields"><div className="field dim">
+                          LAST UPDATE
+                        </div> <div className="field"></div> <div className="field">
+                          
+                        </div></div> <div className="three fields"><div className="field dim">
+                          UPDATED BY
+                        </div> <div className="field"></div> <div className="field">
+                          
+                        </div></div> <div className="three fields"><div className="field dim">
+                          COVERAGE
+                        </div> <div className="field"></div> <div className="field"><div>
+                            Dental
+                          </div></div></div> <div className="three fields"><div className="field dim">
+                          CATEGORY
+                        </div> <div className="field"></div> <div className="field">
+                          </div></div> <div className="three fields"><div className="field dim">
+                          LIMIT TYPE
+                        </div> <div className="field"></div> <div className="field"><div><div>
+                              Peso
+                            </div></div></div></div> <div><div><div className="three fields"><div className="field dim">
+                              LIMIT
+                            </div> <div className="field"></div> <div className="field"><div>
+                                100000
+                              </div></div></div></div></div> <div className="three fields"><div className="field dim">
+                          FREQUENCY
+                        </div> <div className="field"></div> <div className="field"><div>N/A</div></div></div></div></div></div>
                         </div>
+
+                        <div class="sixteen wide computer column ui divider"></div>
+                        <h3>CDT</h3>
                     </div>
                   </div>
                 </div>
