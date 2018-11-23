@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Icon, Label, Menu, Table } from 'semantic-ui-react'
+import BenefitDatatable from './benefit_datatable'
 
 class BenefitView extends Component {
 	render() {
@@ -11,9 +13,11 @@ class BenefitView extends Component {
                       </h1><h2>View Benefit</h2>
                       <div className="clearfix"></div>
                       <div className="ui breadcrumb">
-                        <a href="/web/benefits/"> {this.props.params.code	} </a>
+                        <a href="/benefits"> Dashboard  </a>
                         <i className="right angle icon divider"></i>
-                        <div className="active section dim thin">Benefit
+                        <a href="/benefits"> Benefits  </a>
+                        <i className="right angle icon divider"></i>
+                        <div className="active section dim thin">{this.props.params.code	}
                         </div>
                       </div>
                   </div>
@@ -86,13 +90,40 @@ class BenefitView extends Component {
 
                         <div class="sixteen wide computer column ui divider"></div>
                         <h3>CDT</h3>
+                        <BenefitDatatable data={this.dataSet}> 
+                        </BenefitDatatable>
                     </div>
                   </div>
                 </div>
               </div>
             </main>
-		)
-	}
+		);
+  }
+  
+  dataSet = [
+    ["CDT01", "CDT01"],
+    ["CDT02", "CDT02"],
+    ["CDT03", "CDT03"],
+    ["CDT04", "CDT04"],
+    ["CDT05", "CDT05"],
+    ["CDT06", "CDT06"],
+    ["CDT07", "CDT07"],
+    ["CDT08", "CDT08"],
+    ["CDT09", "CDT09"],
+    ["CDT10", "CDT10"],
+    ["CDT11", "CDT11"],
+    ["CDT12", "CDT12"],
+    ["CDT13", "CDT13"],
+    ["CDT14", "CDT14"],
+    ["CDT15", "CDT15"],
+    ["CDT16", "CDT16"],
+    ["CDT17", "CDT17"],
+    ["CDT18", "CDT18"],
+    ["CDT19", "CDT19"],
+    ["CDT20", "CDT20"],
+    ["CDT21", "CDT21"],
+    ["CDT22", "CDT22"]
+  ]
 }
 
 export default BenefitView;
