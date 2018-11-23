@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 const $ = require('jquery')
-$.DataTable = require('datatables.net')
+$.DataTable = require('datatables.net-se')
 
 export class BenefitDatatable extends Component {
     componentDidMount() {

@@ -1,130 +1,222 @@
 import React, { Component } from 'react';
-import { Icon, Label, Menu, Table } from 'semantic-ui-react'
+import { Dropdown, Menu, Icon, Table } from 'semantic-ui-react'
 import BenefitDatatable from './benefit_datatable'
 
 class BenefitView extends Component {
 	render() {
 		return(
-            <main>
-            <div className="page-title" style={{marginLeft: '150px'}} >
-                <div className="ui clearing segment">
-                  <div className="ui container" style={{marginTop: '80px'}}>
-                    <h1 className="ui left floated header" style={{marginLeft: '-5%'}}>
-                      </h1><h2>View Benefit</h2>
-                      <div className="clearfix"></div>
-                      <div className="ui breadcrumb">
-                        <a href="/benefits"> Dashboard  </a>
-                        <i className="right angle icon divider"></i>
-                        <a href="/benefits"> Benefits  </a>
-                        <i className="right angle icon divider"></i>
-                        <div className="active section dim thin">{this.props.params.code	}
-                        </div>
-                      </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="ui container" style={{paddingLeft: '150px'}}> 
-                <div className="content-section white-bg">
-                  <div className="ui grid">
-                    <div className="row">
-                        <div className="two wide computer sixteen wide mobile column"> 
-                          <div className="mb-2 center aligned">
-                            <div className="mr-2">
-                            <img 
-                              src={process.env.PUBLIC_URL + '/images/tooth.png'}
-                              style={{height: "82px", width: "82px"}}
-                            />
-                            </div>  
-                            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Riders</label>
-                            
-                          </div>
-                        </div>
-                        <div className="six wide computer eight wide tablet eight wide mobile column">
-                          <p className="member-name" style={{color: 'rgb(0, 178, 79)'}}>{this.props.params.code	}</p> 
-                            <div className="section-title mt-2">
-                              <h1><div className="title-name">{this.props.params.code	}</div></h1>
-                            </div>
-                        </div>
-                        <div className="eight wide computer eight wide tablet eight wide mobile column">
-                        <div className="two wide computer sixteen wide mobile column" style={{textAlign: 'right', fontSize: '2rem', paddingTop: '1rem'}}><div className="ui dropdown"><i className="ellipsis vertical icon"></i> <div className="menu"><div className="item"><i className="edit outline icon"></i>
-                            Edit
-                          </div> <div className="item"><i className="clone outline icon"></i>
-                            Versions
-                          </div> <div className="item"><i className="icon-product icon"></i>
-                            View plans
-                          </div> <div className="divider"></div> <div className="item"><i className="trash alternate icon"></i>
-                            Discontinue
-                          </div> <div className="item"><i className="trash alternate icon"></i>
-                            Delete
-                          </div></div></div></div>
-                        </div>
-                        <div className="eight wide computer eight wide tablet eight wide mobile column">
-                          <div className="ui grid"><div className="nine wide column"><div style={{height: '9px'}}></div> <div className="ui form"><div className="three fields"><div className="field dim">
-                          LAST UPDATE
-                        </div> <div className="field"></div> <div className="field">
-                          11/23/2018
-                        </div></div> <div className="three fields"><div className="field dim">
-                          UPDATED BY
-                        </div> <div className="field"></div> <div className="field">
-                          masteradmin
-                        </div></div> <div className="three fields"><div className="field dim">
-                          COVERAGE
-                        </div> <div className="field"></div> <div className="field"><div>
-                          Dental
-                        </div></div></div> <div className="three fields"><div className="field dim">
-                          CATEGORY
-                        </div> <div className="field"></div> <div className="field">
-                          Test  
-                        </div></div> <div className="three fields"><div className="field dim">
-                          LIMIT TYPE
-                        </div> <div className="field"></div> <div className="field"><div><div>
-                              Peso
-                            </div></div></div></div> <div><div><div className="three fields"><div className="field dim">
-                              LIMIT
-                            </div> <div className="field"></div> <div className="field"><div>
-                                100000
-                              </div></div></div></div></div> <div className="three fields"><div className="field dim">
-                          FREQUENCY
-                        </div> <div className="field"></div> <div className="field"><div>N/A</div></div></div></div></div></div>
-                        </div>
-
-                        <div className="sixteen wide computer column ui divider"></div>
-                        <h3>CDT</h3>
-                        <BenefitDatatable data={this.dataSet}> 
-                        </BenefitDatatable>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </main>
-		);
+      <main>
+        <Title code={this.props.params.code} />
+        <Body_Container code={this.props.params.code} />
+      </main>
+    )
   }
-  
-  dataSet = [
-    ["CDT01", "CDT01"],
-    ["CDT02", "CDT02"],
-    ["CDT03", "CDT03"],
-    ["CDT04", "CDT04"],
-    ["CDT05", "CDT05"],
-    ["CDT06", "CDT06"],
-    ["CDT07", "CDT07"],
-    ["CDT08", "CDT08"],
-    ["CDT09", "CDT09"],
-    ["CDT10", "CDT10"],
-    ["CDT11", "CDT11"],
-    ["CDT12", "CDT12"],
-    ["CDT13", "CDT13"],
-    ["CDT14", "CDT14"],
-    ["CDT15", "CDT15"],
-    ["CDT16", "CDT16"],
-    ["CDT17", "CDT17"],
-    ["CDT18", "CDT18"],
-    ["CDT19", "CDT19"],
-    ["CDT20", "CDT20"],
-    ["CDT21", "CDT21"],
-    ["CDT22", "CDT22"]
-  ]
+}
+
+class Title extends Component{
+ constructor(props) {
+    super(props);
+  }
+  render(){
+    return(
+    <div className="page-title" style={{marginLeft: '150px'}} >
+      <div className="ui clearing segment">
+        <div className="ui container" style={{marginTop: '80px'}}>
+          <h1 className="ui left floated header" style={{marginLeft: '-5%'}}>
+          </h1><h2>View Benefit</h2>
+          <div className="clearfix"></div>
+          <div className="ui breadcrumb">
+            <a href="/web/benefits/"> {this.props.code	} </a>
+            <i className="right angle icon divider"></i>
+            <div className="active section dim thin">Benefit
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    )
+}}
+
+class Body_Container extends Component{
+  constructor(props){
+    super(props);
+  }
+  render(){
+    return(
+      <div className="ui container" style={{paddingLeft: '150px'}}>
+        <div className="content-section white-bg">
+          <Options code={this.props.code} />
+          <General code={this.props.code} />
+          <Content code={this.props.code} />
+          <div class="sixteen wide computer column"><div class="ui divider"></div></div>
+          <h3> CDT </h3>  
+          <BenefitDatatable data={dataSet} />
+        </div>
+      </div>
+              )}
+}
+
+class General extends Component{
+  constructor(props){
+    super(props);
+  }
+  render(){
+    return(
+      <div className="ui grid">
+        <div className="row">
+          <div className="two wide computer sixteen wide mobile column">
+            <div className="mb-2 center aligned">
+              <div className="mr-2">
+                <img
+                  src={process.env.PUBLIC_URL + '/images/tooth.png'}
+                  style={{height: "80px"}}
+                />
+              </div>
+              <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Riders</label>
+            </div>
+          </div>
+          <div className="six wide computer eight wide tablet eight wide mobile column">
+            <p className="member-name" style={{color: 'rgb(0, 178, 79)'}}>{this.props.code	}</p>
+            <div className="section-title mt-2">
+              <h1><div className="title-name">{this.props.code}</div></h1>
+            </div>
+          </div>
+          <div className="eight wide computer eight wide tablet eight wide mobile column">
+          </div>
+          <div className="eight wide computer eight wide tablet eight wide mobile column">
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+
+class Content extends Component{
+  constructor(props){
+    super(props)
+  }
+  render(){
+    return(
+      <div className="ui grid">
+        <div className="six wide column">
+          <div className="ui form">
+            <div className="two fields">
+              <div className="field dim">
+                LAST UPDATE
+              </div>
+              <div className="valid_timezone field">June 01, 2018</div>
+            </div>
+
+            <div className="two fields">
+              <div className="field dim">
+                UPDATED BY
+              </div>
+              <div className="field">
+                masteradmin
+              </div>
+            </div>
+            <div className="two fields">
+              <div className="field dim">
+                COVERAGE
+              </div>
+              <div className="field">
+                ACU
+              </div>
+            </div>
+
+            <div className="two fields">
+              <div className="field dim">
+                ACU TYPE
+              </div>
+              <div className="field">
+                Regular
+              </div>
+            </div>
+
+            <div className="two fields">
+              <div className="field dim">
+                AVAILMENT CHANNEL
+              </div>
+              <div className="field">
+                Hospital/Clinic and Mobile
+              </div>
+            </div>
+            <div className="two fields">
+              <div className="field dim">
+                TYPE
+              </div>
+              <div className="field">
+                Availment
+              </div>
+            </div>
+
+            <div className="two fields">
+              <div className="field dim">
+                LIMIT TYPE
+              </div>
+              <div className="field">
+                Sessions
+              </div>
+            </div>
+
+            <div className="two fields">
+              <div className="field dim">
+                LIMIT
+              </div>
+              <div className="field">
+                1
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+    let dataSet = [
+    ["CDT1", "CDT1"],
+    ["CDT2", "CDT2"],
+    ["CDT3", "CDT3"],
+    ["CDT4", "CDT4"],
+    ["CDT5", "CDT5" ],
+    ["CDT6", "CDT6" ],
+    ["CDT7", "CDT7" ],
+    ["CDT8", "CDT8" ],
+    ["CDT9", "CDT9" ],
+    ["CDT10", "CDT10" ],
+    ["CDT11", "CDT11" ],
+    ["CDT12", "CDT12" ],
+    ["CDT13", "CDT13" ],
+    ["CDT14", "CDT14" ],
+    ["CDT15", "CDT15" ],
+    ["CDT16", "CDT16" ],
+    ["CDT17", "CDT17" ],
+    ["CDT18", "CDT18" ],
+    ["CDT19", "CDT19" ],
+    ["CDT20", "CDT20" ],
+    ["CDT21", "CDT21" ],
+    ["CDT22", "CDT22" ]
+    ]
+
+class Options extends Component {
+ render(){
+  let styles = {textAlign: 'right', fontSize: '2rem', paddingTop: '1rem'}
+   return(
+    <div className="eight wide computer eight wide tablet eight wide mobile column">
+      <div className="two wide computer sixteen wide mobile column" style={styles}>
+        <Dropdown icon='ellipsis vertical' direction='left'>
+          <Dropdown.Menu>
+            <Dropdown.Item icon='edit outline icon' text='Edit' />
+            <Dropdown.Item icon='clone outline icon' text='Versions' />
+            <Dropdown.Item icon='icon-product outline icon' text='View plans' />
+            <Dropdown.Item icon='trash alternate outline icon' text='Discontinue' />
+            <Dropdown.Item icon='trash alternate outline icon' text='Delete' />
+          </Dropdown.Menu>
+        </Dropdown>
+    </div>
+    </div>
+  )
+ }
 }
 
 export default BenefitView;
