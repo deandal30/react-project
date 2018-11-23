@@ -47,7 +47,7 @@ class BenefitView extends Component {
                             </div>
                         </div>
                         <div className="eight wide computer eight wide tablet eight wide mobile column">
-                        <div className="two wide computer sixteen wide mobile column" style={{textAlign: 'right', fontSize: '2rem', paddingTop: '1rem'}}><div tabindex="0" className="ui dropdown"><i className="ellipsis vertical icon"></i> <div tabindex="-1" className="menu"><div className="item"><i className="edit outline icon"></i>
+                        <div className="two wide computer sixteen wide mobile column" style={{textAlign: 'right', fontSize: '2rem', paddingTop: '1rem'}}><div className="ui dropdown"><i className="ellipsis vertical icon"></i> <div className="menu"><div className="item"><i className="edit outline icon"></i>
                             Edit
                           </div> <div className="item"><i className="clone outline icon"></i>
                             Versions
@@ -63,19 +63,20 @@ class BenefitView extends Component {
                           <div className="ui grid"><div className="nine wide column"><div style={{height: '9px'}}></div> <div className="ui form"><div className="three fields"><div className="field dim">
                           LAST UPDATE
                         </div> <div className="field"></div> <div className="field">
-                          
+                          11/23/2018
                         </div></div> <div className="three fields"><div className="field dim">
                           UPDATED BY
                         </div> <div className="field"></div> <div className="field">
-                          
+                          masteradmin
                         </div></div> <div className="three fields"><div className="field dim">
                           COVERAGE
                         </div> <div className="field"></div> <div className="field"><div>
-                            Dental
-                          </div></div></div> <div className="three fields"><div className="field dim">
+                          Dental
+                        </div></div></div> <div className="three fields"><div className="field dim">
                           CATEGORY
                         </div> <div className="field"></div> <div className="field">
-                          </div></div> <div className="three fields"><div className="field dim">
+                          Test  
+                        </div></div> <div className="three fields"><div className="field dim">
                           LIMIT TYPE
                         </div> <div className="field"></div> <div className="field"><div><div>
                               Peso
@@ -88,7 +89,7 @@ class BenefitView extends Component {
                         </div> <div className="field"></div> <div className="field"><div>N/A</div></div></div></div></div></div>
                         </div>
 
-                        <div class="sixteen wide computer column ui divider"></div>
+                        <div className="sixteen wide computer column ui divider"></div>
                         <h3>CDT</h3>
                         <BenefitDatatable data={this.dataSet}> 
                         </BenefitDatatable>
