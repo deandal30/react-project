@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Main from './components/main';
+import Body from './components/body';
 import AppSidebar from './components/appsidebar'
 
 class App extends Component {
-  render() {    
-    return (    
+  render() {
+    return (
       <div className='fp-wrapper'>
           <AppSidebar />
             <div >
-              <Main />
+              <Body />
           </div>
       </div>
     );
